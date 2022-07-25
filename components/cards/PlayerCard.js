@@ -19,11 +19,11 @@ export default function PlayerCard({ playerObj, onUpdate }) {
         <Card.Title>{playerObj.gamertag}</Card.Title>
         <p className="card-text bold"><span>Rank</span><br /> {playerObj.level}</p>
         {/* DYNAMIC LINK TO VIEW THE BOOK DETAILS  */}
-        <Link href={`/player/${playerObj.firebaseKey}`} passHref>
+        <Link href={`/players/${playerObj.firebaseKey}`} passHref>
           <Button variant="primary" className="m-2">VIEW</Button>
         </Link>
         {/* DYNAMIC LINK TO EDIT THE BOOK DETAILS  */}
-        <Link href={`/player/edit/${playerObj.firebaseKey}`} passHref>
+        <Link href={`/players/edit/${playerObj.firebaseKey}`} passHref>
           <Button variant="info">EDIT</Button>
         </Link>
         <Button variant="danger" onClick={deleteThisPlayer} className="m-2">
