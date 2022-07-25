@@ -33,7 +33,7 @@ const createPlayer = (playerObj, uid) => new Promise((resolve, reject) => {
 });
 
 const updatePlayer = (playerObj, uid) => new Promise((resolve, reject) => {
-  axios.patch(`${dbUrl}/authors/${playerObj.firebaseKey}.json`, playerObj)
+  axios.patch(`${dbUrl}/players/${playerObj.firebaseKey}.json`, playerObj)
     .then(() => getPlayers(uid).then(resolve))
     .catch(reject);
 });

@@ -9,7 +9,7 @@ import { useAuth } from '../../utils/context/authContext';
 
 const intitialState = {
   gamertag: '',
-  imageUrl: '',
+  image: '',
   level: '',
 };
 
@@ -34,11 +34,11 @@ export default function PlayerForm({ obj }) {
     e.preventDefault();
     if (obj.firebaseKey) {
       updatePlayer(formInput)
-        .then(() => router.push('/players'));
+        .then(() => router.push('/'));
     } else {
       const payload = { ...formInput, uid: user.uid };
       createPlayer(payload).then(() => {
-        router.push('/players');
+        router.push('/');
       });
     }
   };
