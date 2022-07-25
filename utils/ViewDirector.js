@@ -6,7 +6,6 @@ import NavBar from '../components/NavBar';
 
 const ViewDirectorBasedOnUserAuthStatus = ({ component: Component, pageProps }) => {
   const { user, userLoading } = useAuth();
-  console.warn(user);
   // if user state is null, then show loader
   if (userLoading) {
     return <Loading />;
