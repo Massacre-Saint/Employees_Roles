@@ -1,6 +1,6 @@
 import React from 'react';
-import PlayerForm from '../../components/forms/PlayerForm';
+import TeamForm from '../../components/forms/TeamForm';
 
 export default function AddPerson() {
-  return <PlayerForm />;
+  return <TeamForm />;
 }

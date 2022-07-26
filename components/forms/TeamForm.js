@@ -59,7 +59,7 @@ export default function TeamForm({ obj }) {
           public: e.target.checked,
         }))}
       />
-      <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Book</Button>
+      <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Team</Button>
     </Form>
   );
 }
