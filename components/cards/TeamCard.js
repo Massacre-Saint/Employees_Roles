@@ -15,10 +15,10 @@ export default function TeamCard({ teamObj, onUpdate }) {
     <Card style={{ width: '18rem', margin: '10px' }}>
       <Card.Body>
         <Card.Title>FIRETEAM: {teamObj.name}</Card.Title>
-        <Link href={`/players/${teamObj.firebaseKey}`} passHref>
+        <Link href={`/teams/${teamObj.firebaseKey}`} passHref>
           <Button variant="primary" className="m-2">VIEW</Button>
         </Link>
-        <Link href={`/players/edit/${teamObj.firebaseKey}`} passHref>
+        <Link href={`/teams/edit/${teamObj.firebaseKey}`} passHref>
           <Button variant="info">EDIT</Button>
         </Link>
         <Button variant="danger" onClick={deleteThisTeam} className="m-2">
