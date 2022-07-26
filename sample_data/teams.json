@@ -10,5 +10,11 @@
     "firebaseKey":"qL8zod9IgXGD9JT",
     "name": "Red Team",
     "public":"false"
+  },
+  "ZTsj6sqzIDN1pfI": {
+    "uid":"mhxFgASX9UfJNvZoprCnujsjrFx2",
+    "firebaseKey":"ZTsj6sqzIDN1pfI",
+    "name": "Green Team",
+    "public":"false"
   }
 }

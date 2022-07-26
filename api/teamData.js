@@ -43,10 +43,17 @@ const deleteSingleTeam = (firebaseKey) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
+const getTeamPlayers = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/players.json?orderBy="teamId"&equalTo="${firebaseKey}"`)
+    .then((response) => resolve(Object.values(response.data)))
+    .catch((error) => reject(error));
+});
+
 export {
   getTeams,
   getSingleTeam,
   createTeam,
   updateTeam,
   deleteSingleTeam,
+  getTeamPlayers,
 };
