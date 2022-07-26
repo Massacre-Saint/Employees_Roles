@@ -7,7 +7,7 @@ export default function Search({ players, setFilteredPlayers }) {
   const handleChange = (e) => {
     const { value } = e.target;
     setQuery(value);
-    const results = players.filter((player) => player.gamertag.trim().toLowerCase().includes(query) || player.level.trim().toLowerCase().includes(query));
+    const results = players.filter((player) => player.gamertag.trim().toLowerCase().includes(query) || player.rank.trim().toLowerCase().includes(query));
     setFilteredPlayers(results);
   };
   return (
