@@ -52,7 +52,17 @@ h3 {
   line-height: 28px;
   letter-spacing: .15rem;
   color:#fff;
+  padding-bottom: 0px;
+}
+.player-team {
+  padding-top: 0px;
+  font-weight: 350px;
+  font-size: 15px;
+  line-height: 28px;
+  letter-spacing: .15rem;
+  color:rgb(191, 190, 190);
   padding-bottom: 8px;
+  text-transform: uppercase;
 }
 
 .image-container {

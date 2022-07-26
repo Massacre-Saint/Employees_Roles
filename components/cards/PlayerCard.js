@@ -15,7 +15,8 @@ export default function PlayerCard({ playerObj, onUpdate }) {
     <section className="player-card">
       <div>
         <span>
-          <h3 className="player-title ">{playerObj.gamertag}</h3>
+          <h3 className="player-title">{playerObj.gamertag}</h3>
+          <h4 className="player-team">{playerObj.teamId}</h4>
           <Button className="delete-button" onClick={deleteThisPlayer}>X</Button>
         </span>
         <div className="image-container">
@@ -72,6 +73,7 @@ PlayerCard.propTypes = {
     gamertag: PropTypes.string,
     image: PropTypes.string,
     rank: PropTypes.string,
+    teamId: PropTypes.string,
   }).isRequired,
   onUpdate: PropTypes.func.isRequired,
 };

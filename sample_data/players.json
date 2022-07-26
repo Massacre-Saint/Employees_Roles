@@ -4,27 +4,31 @@
    "gamertag": "Massacre Saint",
    "rank": "Inheritor",
    "image": "https://halo.wiki.gallery/images/thumb/f/f1/HTMCC_HR_Spartan_Mark_V_%28B%29.png/250px-HTMCC_HR_Spartan_Mark_V_%28B%29.png",
-    "uid": "mhxFgASX9UfJNvZoprCnujsjrFx2"
+  "uid": "mhxFgASX9UfJNvZoprCnujsjrFx2",
+  "teamId":"ZTsj6sqzIDN1pfI"
   },
   "-MiBuqoYj9834biiw": {
     "firebaseKey": "-MiBuqoYj9834biiw",
     "gamertag": "STEVOYD",
     "rank": "Commander Grade 2",
     "image": "https://halo.wiki.gallery/images/thumb/5/50/HTMCC_HR_Spartan_CQC.png/275px-HTMCC_HR_Spartan_CQC.png",
-     "uid": "mhxFgASX9UfJNvZoprCnujsjrFx2"
+    "uid": "mhxFgASX9UfJNvZoprCnujsjrFx2",
+   "teamId":"ZTsj6sqzIDN1pfI"
    },
    "-MiBvEFJTI3FmTzDu_3V": {
     "firebaseKey": "-MiBvEFJTI3FmTzDu_3V",
     "gamertag": "Luke_Pawlowski",
     "rank": "Warrant Officer Grade 1",
     "image": "https://halo.wiki.gallery/images/thumb/0/0e/Green_Background_Security.png/250px-Green_Background_Security.png",
-     "uid": "mhxFgASX9UfJNvZoprCnujsjrFx2"
+    "uid": "mhxFgASX9UfJNvZoprCnujsjrFx2",
+    "teamId":"qL8zod9IgXGD9JT"
    },
    "-MiBvf3bIyooE6x4nLLB": {
     "firebaseKey": "-MiBvf3bIyooE6x4nLLB",
     "gamertag": "Windjammer19",
     "rank": "Commander Grade 1",
     "image": "https://halo.wiki.gallery/images/thumb/e/e6/HTMCC_HR_Spartan_Security.png/250px-HTMCC_HR_Spartan_Security.png",
-     "uid": "mhxFgASX9UfJNvZoprCnujsjrFx2"
+    "uid": "mhxFgASX9UfJNvZoprCnujsjrFx2",
+    "teamId":"qL8zod9IgXGD9JT"
    }
 }

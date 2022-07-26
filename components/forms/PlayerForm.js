@@ -7,6 +7,7 @@ import { Button } from 'react-bootstrap';
 import { createPlayer, updatePlayer } from '../../api/playerData';
 // import getRanks from '../../api/rankData';
 import { useAuth } from '../../utils/context/authContext';
+import { getTeams } from '../../api/teamData';
 
 const intitialState = {
   gamertag: '',
@@ -16,12 +17,14 @@ const intitialState = {
 
 export default function PlayerForm({ obj }) {
   const [formInput, setFormInput] = useState(intitialState);
+  const [teams, setTeams] = useState([]);
   // const [ranks, setRanks] = useState([]);
   const router = useRouter();
   const { user } = useAuth();
 
   useEffect(() => {
     // getRanks().then(setRanks);
+    getTeams(user.uid).then(setTeams);
     if (obj.firebaseKey) setFormInput(obj);
   }, [obj, user]);
 
@@ -37,7 +40,7 @@ export default function PlayerForm({ obj }) {
     e.preventDefault();
     if (obj.firebaseKey) {
       updatePlayer(formInput)
-        .then(() => router.push('/'));
+        .then(() => router.push('/players'));
     } else {
       const payload = { ...formInput, uid: user.uid };
       createPlayer(payload).then(() => {
@@ -58,28 +61,28 @@ export default function PlayerForm({ obj }) {
       <FloatingLabel controlId="floatingInput1" label="Ranking" className="mb-3">
         <Form.Control type="text" placeholder="Spartan Ranking" name="rank" value={formInput.rank} onChange={handleChange} required />
       </FloatingLabel>
-      {/* <FloatingLabel controlId="floatingSelect" label="Rank">
+      <FloatingLabel controlId="floatingSelect" label="Team">
         <Form.Select
-          aria-label="Rank"
-          name="rank"
+          aria-label="Team"
+          name="team"
           onChange={handleChange}
           className="mb-3"
           required
         >
-          <option value="">Select a Rank</option>
+          <option value="">Choose your team.</option>
           {
-            ranks.map((rank) => (
+            teams.map((team) => (
               <option
-                key={rank.name}
-                value={rank.name}
-                selected={obj.rank === rank.name}
+                key={team.name}
+                value={team.name}
+                selected={obj.teamId === team.name}
               >
-                {rank.name}
+                {team.name}
               </option>
             ))
           }
         </Form.Select>
-      </FloatingLabel> */}
+      </FloatingLabel>
 
       <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Player</Button>
     </Form>
@@ -92,6 +95,7 @@ PlayerForm.propTypes = {
     gamertag: PropTypes.string,
     rank: PropTypes.string,
     image: PropTypes.string,
+    teamId: PropTypes.string,
   }),
 };
 
