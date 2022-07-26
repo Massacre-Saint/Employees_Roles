@@ -38,7 +38,7 @@ const updateTeam = (teamObj, uid) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 const deleteSingleTeam = (firebaseKey) => new Promise((resolve, reject) => {
-  axios.delete(`${dbUrl}/players/${firebaseKey}.json`)
+  axios.delete(`${dbUrl}/teams/${firebaseKey}.json`)
     .then(() => resolve('deleted'))
     .catch((error) => reject(error));
 });

@@ -10,6 +10,7 @@ import { useAuth } from '../../utils/context/authContext';
 const intitialState = {
   name: '',
   public: 'true',
+  image: 'https://cdn.escharts.com/uploads/public/5ea/83c/e5c/5ea83ce5cd72c384329869.png',
 };
 
 export default function TeamForm({ obj }) {

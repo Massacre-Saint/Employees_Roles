@@ -66,6 +66,9 @@ h3 {
   height: 200px;
   -webkit-mask-image: -webkit-linear-gradient(bottom,transparent,#000 20%);
 }
+.team-image {
+ aspect-ratio: auto;
+}
 .player-image {
   position: relative;
   height: 320px;
