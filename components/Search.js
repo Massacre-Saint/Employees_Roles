@@ -1,0 +1,34 @@
+import React, { useState } from 'react';
+import { Button, Form } from 'react-bootstrap';
+import PropTypes from 'prop-types';
+
+export default function Search({ players, setFilteredPlayers }) {
+  const [query, setQuery] = useState('');
+  const handleChange = (e) => {
+    const { value } = e.target;
+    setQuery(value);
+    const results = players.filter((player) => player.gamertag.trim().toLowerCase().includes(query) || player.level.trim().toLowerCase().includes(query));
+    setFilteredPlayers(results);
+  };
+  return (
+    <div>
+      <Form className="d-flex">
+        <Form.Control
+          type="search"
+          placeholder="Search Gamertag"
+          className="me-2"
+          aria-label="Search"
+          value={query}
+          onChange={handleChange}
+        />
+        <Button variant="outline-success">Search</Button>
+      </Form>
+    </div>
+  );
+}
+Search.propTypes = {
+  players: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string,
+  })).isRequired,
+  setFilteredPlayers: PropTypes.func.isRequired,
+};
