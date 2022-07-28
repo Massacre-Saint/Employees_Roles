@@ -13,6 +13,7 @@ const intitialState = {
   gamertag: '',
   image: '',
   rank: '',
+  teamId: '',
 };
 
 export default function PlayerForm({ obj }) {
@@ -67,13 +68,14 @@ export default function PlayerForm({ obj }) {
           name="teamId"
           onChange={handleChange}
           className="mb-3"
+          value={obj.teamId}
           required
         >
           <option value="">Choose your team.</option>
           {
             teams.map((team) => (
               <option
-                key={team.name}
+                key={team.firebaseKey}
                 value={team.firebaseKey}
               >
                 {team.name}
