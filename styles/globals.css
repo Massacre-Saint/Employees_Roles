@@ -1,18 +1,14 @@
 @import 'bootstrap/dist/css/bootstrap.css';
 
+* {
+  box-sizing: border-box;
+}
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
   background: #20272c;
   mix-blend-mode: normal;
   opacity: 1;
@@ -23,7 +19,39 @@ body {
   top: 0;
   right: 0;
 }
+.text-lg {
+  margin-bottom: 8px;
+  font-size: 28px;
+  font-weight: 350;
+  line-height: 38px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: #fff;
+  margin-block-end: 0.83em;
+}
+.header-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 16px;
+}
+.hero-header {
+  font-family: Arial,sans-serif;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: .05em;
+  font-size: 20px;
+  color: rgba(255,255,255,.75);
+  flex-grow: 1;
+}
 
+.divider-line-lg {
+  display: flex;
+  width: 100%;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  border-bottom: 1px solid rgba(255,255,255,.5);
+}
 .player-cards-container {
   display: grid;
   row-gap: 100px;
@@ -116,6 +144,7 @@ h3 {
   padding: 0 20px 20px;
   width: 100%;
 }
+
 .button {
   width: 100%;
   max-width: none;
@@ -133,7 +162,6 @@ h3 {
   position: absolute;
   inset: 2px -2px -2px 2px;
   border: 1px solid transparent;
-  transition: border-color 200ms ease 0s;
   margin: 0;
   padding:0;
   font: inherit;
@@ -145,10 +173,6 @@ h3 {
   left: 0px;
   right: 0px;
   bottom: 0px;
-  transition-property: border-color, box-shadow;
-  transition-timing-function: ease;
-  transition-duration: 200ms;
-  transition-delay: 0s;
   border-width: 1px;
   border-style: solid;
   border-color: rgba(255, 255, 255, 0.65);
@@ -174,7 +198,6 @@ h3 {
   border-color: transparent;
   border-style: solid;
   border-width: 0px 2px 2px 0px;
-  transition: border-color 200ms ease 0s;
   letter-spacing: 0.3em;
   text-align: center;
 }
@@ -185,10 +208,6 @@ h3 {
   bottom: 0px;
   right: 0px;
   background-color: rgba(255, 255, 255, 0.15);
-  transition-property: background-color, left, top, right, bottom;
-  transition-timing-function: ease;
-  transition-duration: 200ms;
-  transition-delay: 0s;
   letter-spacing: 0.3em;
 }
 .button-content {
@@ -198,26 +217,12 @@ h3 {
   display: inline-block;
   color: rgb(255, 255, 255);
   text-align: center;
-  transition-property: transform, text-shadow;
-  transition-timing-function: ease;
-  transition-duration: 200ms;
-  transition-delay: 0s;
 }
-.chevron{
-  visibility: hidden;
-  position: absolute;
-  right: 3em;
-  top: 0.85em;
-  color: transparent;
-  transition-property: color, right, text-shadow;
-  transition-timing-function: ease;
-  transition-duration: 200ms;
-}
+
 .delete-button {
   background-color: rgba(255, 255, 255, 0.15);
   inset: 3px 0px 0px 3px;
-  border-color: transparent;
-  border-style: solid;
+  border-style: none;
   border-width: 0px 2px 2px 0px;
-  transition: border-color 200ms ease 0s;
+  transition: 200ms ease 0s;
 }

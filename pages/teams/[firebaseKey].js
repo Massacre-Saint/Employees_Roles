@@ -8,7 +8,6 @@ export default function ViewTeam() {
   const [teamDetails, setTeamDetails] = useState({});
   const [filteredPlayers, setFilteredPlayers] = useState([]);
   const [players, setPlayers] = useState([]);
-  console.warn(teamDetails);
   const router = useRouter();
   const { firebaseKey } = router.query;
   const getAllPlayers = () => {
@@ -24,13 +23,13 @@ export default function ViewTeam() {
   }, [firebaseKey]);
   return (
     <div>
-      <div className="team-header-container">
-        <div className="team-hero-header">{teamDetails.name}</div>
+      <div className="header-container">
+        <div className="hero-header">{teamDetails.name}</div>
         <div className="search-bar">
           <Search players={players} teamDetails={teamDetails} setFilteredPlayers={setFilteredPlayers} />
         </div>
       </div>
-      <h1>ASSIGNED SPARTANS</h1>
+      <h1 className="text-lg">ASSIGNED SPARTANS</h1>
       <div className="divider-line-lg" />
       <div className="player-cards-container">
         {filteredPlayers.map((player) => (

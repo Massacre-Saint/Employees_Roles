@@ -24,7 +24,6 @@ export default function PlayerForm({ obj }) {
   const { user } = useAuth();
 
   useEffect(() => {
-    // getRanks().then(setRanks);
     getTeams(user.uid).then(setTeams);
     if (obj.firebaseKey) setFormInput(obj);
   }, [obj, user]);
@@ -68,7 +67,6 @@ export default function PlayerForm({ obj }) {
           name="teamId"
           onChange={handleChange}
           className="mb-3"
-          value={obj.teamId}
           required
         >
           <option value="">Choose your team.</option>
