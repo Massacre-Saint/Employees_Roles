@@ -19,6 +19,7 @@ export default function Search({ players, setFilteredPlayers }) {
           className="me-2"
           aria-label="Search"
           value={query}
+          name="search"
           onChange={handleChange}
         />
         <Button variant="outline-success">Search</Button>
@@ -28,7 +29,24 @@ export default function Search({ players, setFilteredPlayers }) {
 }
 Search.propTypes = {
   players: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string,
-  })).isRequired,
-  setFilteredPlayers: PropTypes.func.isRequired,
+    gamertag: PropTypes.string,
+  })),
+  teamDetails: PropTypes.shape({
+    players: PropTypes.arrayOf(PropTypes.shape({
+      gamertag: PropTypes.string,
+    })),
+  }),
+  setFilteredPlayers: PropTypes.func,
+};
+
+Search.defaultProps = {
+  players: PropTypes.arrayOf(PropTypes.shape({
+    gamertag: '',
+  })),
+  teamDetails: PropTypes.shape({
+    players: PropTypes.arrayOf(PropTypes.shape({
+      gamertag: '',
+    })),
+  }),
+  setFilteredPlayers: () => {},
 };

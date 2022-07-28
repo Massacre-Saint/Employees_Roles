@@ -1,8 +1,10 @@
-// import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
+import Link from 'next/link';
 import { deleteSinglePlayer } from '../../api/playerData';
+
+// import { viewPlayerTeam } from '../../api/margedData';
 
 export default function PlayerCard({ playerObj, onUpdate }) {
   const deleteThisPlayer = () => {
@@ -33,37 +35,11 @@ export default function PlayerCard({ playerObj, onUpdate }) {
           <div className="rank-title"> Highest Rank</div>
           <div className="rank-name">{playerObj.rank}</div>
         </div>
-        <div className="button-contaier">
-          <a className="button" href={`/players/edit/${playerObj.firebaseKey}`} passHref>
-            <div className="outer-shadow" />
-            <div className="outer" />
-            <div className="inner-container">
-              <div className="container-shadow" />
-              <div className="container-background" />
-              <span className="button-content">
-                <span>Edit Player</span>
-              </span>
-            </div>
-          </a>
-        </div>
+        <Link className="button" href={`/players/edit/${playerObj.firebaseKey}`} passHref>
+          <button type="button">View Player</button>
+        </Link>
       </div>
     </section>
-  // <Card style={{ width: '18rem', margin: '10px' }}>
-  //   <Card.Img variant="top" src={playerObj.image} alt={playerObj.gamertag} style={{ height: '400px' }} />
-  //   <Card.Body>
-  //     <Card.Title>{playerObj.gamertag}</Card.Title>
-  //     <p className="card-text bold"><span>Rank</span><br /> {playerObj.rank}</p>
-  //     <Link href={`/players/${playerObj.firebaseKey}`} passHref>
-  //       <Button variant="primary" className="m-2">VIEW</Button>
-  //     </Link>
-  //     <Link href={`/players/edit/${playerObj.firebaseKey}`} passHref>
-  //       <Button variant="info">EDIT</Button>
-  //     </Link>
-  //     <Button variant="danger" onClick={deleteThisPlayer} className="m-2">
-  //       DELETE
-  //     </Button>
-  //   </Card.Body>
-  // </Card>
   );
 }
 
