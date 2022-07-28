@@ -44,7 +44,7 @@ export default function PlayerForm({ obj }) {
     } else {
       const payload = { ...formInput, uid: user.uid };
       createPlayer(payload).then(() => {
-        router.push('/');
+        router.push('/players');
       });
     }
   };
@@ -64,7 +64,7 @@ export default function PlayerForm({ obj }) {
       <FloatingLabel controlId="floatingSelect" label="Team">
         <Form.Select
           aria-label="Team"
-          name="team"
+          name="teamId"
           onChange={handleChange}
           className="mb-3"
           required
@@ -74,8 +74,7 @@ export default function PlayerForm({ obj }) {
             teams.map((team) => (
               <option
                 key={team.name}
-                value={team.name}
-                selected={obj.teamId === team.name}
+                value={team.firebaseKey}
               >
                 {team.name}
               </option>
