@@ -2,22 +2,11 @@ import PropTypes from 'prop-types';
 import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
-import { deleteSinglePlayer, getPlayers } from '../../api/playerData';
-import { getTeams } from '../../api/teamData';
-import { useAuth } from '../../utils/context/authContext';
+import { deleteSinglePlayer } from '../../api/playerData';
+
 // import { viewPlayerTeam } from '../../api/margedData';
 
 export default function PlayerCard({ playerObj, onUpdate }) {
-  const [teams, setTeams] = useState([]);
-  const [players, setPlayers] = useState([]);
-  const { user } = useAuth();
-
-  useEffect(() => {
-    getTeams(user.uid).then(setTeams);
-    getPlayers(user.uid).then(setPlayers);
-  }, [playerObj]);
- 
   const deleteThisPlayer = () => {
     if (window.confirm(`Delete ${playerObj.gamertag}?`)) {
       deleteSinglePlayer(playerObj.firebaseKey).then(() => onUpdate());
