@@ -20,6 +20,7 @@ export default function ViewTeam() {
   };
   useEffect(() => {
     getAllPlayers(firebaseKey);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [firebaseKey]);
   return (
     <div>

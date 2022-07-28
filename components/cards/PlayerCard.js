@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
-import Link from 'next/link';
 import { deleteSinglePlayer } from '../../api/playerData';
 
 // import { viewPlayerTeam } from '../../api/margedData';
@@ -35,9 +34,19 @@ export default function PlayerCard({ playerObj, onUpdate }) {
           <div className="rank-title"> Highest Rank</div>
           <div className="rank-name">{playerObj.rank}</div>
         </div>
-        <Link className="button" href={`/players/edit/${playerObj.firebaseKey}`} passHref>
-          <button type="button">View Player</button>
-        </Link>
+        <div className="button-contaier">
+          <a className="button" href={`/players/edit/${playerObj.firebaseKey}`}>
+            <div className="outer-shadow" />
+            <div className="outer" />
+            <div className="inner-container">
+              <div className="container-shadow" />
+              <div className="container-background" />
+              <span className="button-content">
+                <span>Edit Player</span>
+              </span>
+            </div>
+          </a>
+        </div>
       </div>
     </section>
   );

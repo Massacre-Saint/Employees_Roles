@@ -51,7 +51,7 @@ export default function TeamForm({ obj }) {
         className="text-white mb-3"
         type="switch"
         id="public"
-        name="public"
+        name="true"
         label="Public?"
         checked={formInput.public}
         onChange={(e) => setFormInput((prevState) => ({
