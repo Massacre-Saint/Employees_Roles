@@ -20,15 +20,31 @@ export default function Players() {
   }, [user]);
   return (
     <div>
-      <div>
-        <Search players={players} setFilteredPlayers={setFilteredPlayers} />
-        <div className="player-cards-container">
-          {/* TODO: map over books here using BookCard component */}
-          {filteredPlayers.map((player) => (
-            <PlayerCard key={player.firebaseKey} playerObj={player} onUpdate={getAllPlayers} />
-          ))}
+      <div className="header-container">
+        <div className="hero-header">{user.displayName}</div>
+        <div className="search-bar">
+          <Search players={players} setFilteredPlayers={setFilteredPlayers} />
         </div>
       </div>
+      <h1 className="text-lg">SPARTANS</h1>
+      <div className="divider-line-lg" />
+      <div className="player-cards-container">
+        {filteredPlayers.map((player) => (
+          <PlayerCard key={player.firebaseKey} playerObj={player} onUpdate={getAllPlayers} />
+        ))}
+      </div>
     </div>
+
+  // <div>
+  //   <div className="header-container">
+  //     <Search players={players} setFilteredPlayers={setFilteredPlayers} />
+  //     <div className="player-cards-container">
+  //       {/* TODO: map over books here using BookCard component */}
+  //       {filteredPlayers.map((player) => (
+  //         <PlayerCard key={player.firebaseKey} playerObj={player} onUpdate={getAllPlayers} />
+  //       ))}
+  //     </div>
+  //   </div>
+  // </div>
   );
 }
