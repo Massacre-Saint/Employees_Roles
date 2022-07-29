@@ -20,9 +20,11 @@ export default function Team() {
       <div>
         <div className="player-cards-container">
           {/* TODO: map over books here using BookCard component */}
+          <h1>Public</h1>
           {teams.map((team) => (
             <TeamCard key={team.firebaseKey} teamObj={team} onUpdate={getAllTeams} />
           ))}
+          <h1>Private</h1>
         </div>
       </div>
     </div>

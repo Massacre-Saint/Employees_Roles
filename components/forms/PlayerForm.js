@@ -8,6 +8,7 @@ import { createPlayer, updatePlayer } from '../../api/playerData';
 // import getRanks from '../../api/rankData';
 import { useAuth } from '../../utils/context/authContext';
 import { getTeams } from '../../api/teamData';
+import { getRanks } from '../../api/rankData';
 
 const intitialState = {
   gamertag: '',
@@ -19,12 +20,13 @@ const intitialState = {
 export default function PlayerForm({ obj }) {
   const [formInput, setFormInput] = useState(intitialState);
   const [teams, setTeams] = useState([]);
-  // const [ranks, setRanks] = useState([]);
+  const [ranks, setRanks] = useState([]);
   const router = useRouter();
   const { user } = useAuth();
 
   useEffect(() => {
     getTeams(user.uid).then(setTeams);
+    getRanks().then(setRanks);
     if (obj.firebaseKey) setFormInput(obj);
   }, [obj, user]);
 
@@ -58,8 +60,29 @@ export default function PlayerForm({ obj }) {
       <FloatingLabel controlId="floatingInput2" label="Spartan Image" className="mb-3">
         <Form.Control type="url" placeholder="Enter an image url" name="image" value={formInput.image} onChange={handleChange} required />
       </FloatingLabel>
-      <FloatingLabel controlId="floatingInput1" label="Ranking" className="mb-3">
+      {/* <FloatingLabel controlId="floatingInput1" label="Ranking" className="mb-3">
         <Form.Control type="text" placeholder="Spartan Ranking" name="rank" value={formInput.rank} onChange={handleChange} required />
+      </FloatingLabel> */}
+      <FloatingLabel controlId="floatingSelect" label="Rank">
+        <Form.Select
+          aria-label="Rank"
+          name="rank"
+          onChange={handleChange}
+          className="mb-3"
+          required
+        >
+          <option value="">Choose your rank.</option>
+          {
+            ranks.map((rank) => (
+              <option
+                key={rank.firebaseKey}
+                value={rank.firebaseKey}
+              >
+                {rank.name}
+              </option>
+            ))
+          }
+        </Form.Select>
       </FloatingLabel>
       <FloatingLabel controlId="floatingSelect" label="Team">
         <Form.Select

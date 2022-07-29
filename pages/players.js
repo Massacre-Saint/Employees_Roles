@@ -21,7 +21,7 @@ export default function Players() {
   return (
     <div>
       <div className="header-container">
-        <div className="hero-header">{user.displayName}</div>
+        <div className="hero-header">{user.displayName}&apos;s</div>
         <div className="search-bar">
           <Search players={players} setFilteredPlayers={setFilteredPlayers} />
         </div>
@@ -34,17 +34,5 @@ export default function Players() {
         ))}
       </div>
     </div>
-
-  // <div>
-  //   <div className="header-container">
-  //     <Search players={players} setFilteredPlayers={setFilteredPlayers} />
-  //     <div className="player-cards-container">
-  //       {/* TODO: map over books here using BookCard component */}
-  //       {filteredPlayers.map((player) => (
-  //         <PlayerCard key={player.firebaseKey} playerObj={player} onUpdate={getAllPlayers} />
-  //       ))}
-  //     </div>
-  //   </div>
-  // </div>
   );
 }
