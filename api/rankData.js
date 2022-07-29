@@ -20,4 +20,7 @@ const getSingleRank = (firebaseKey) => new Promise((resolve, reject) => {
     .then((response) => resolve(response.data))
     .catch(reject);
 });
-export default getRanks;
+export {
+  getRanks,
+  getSingleRank,
+};

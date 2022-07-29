@@ -1,23 +1,28 @@
-// import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
 import { useEffect, useState } from 'react';
 import { deleteSinglePlayer } from '../../api/playerData';
 import { viewTeamDetails } from '../../api/margedData';
+import { getRanks } from '../../api/rankData';
 
 export default function PlayerCard({ playerObj, onUpdate }) {
-  // const router = useRouter();
-  // const teamView = router.pathname;
   const teamFirebaseKey = playerObj.teamId;
   const [teamDetails, setTeamDetails] = useState({});
+  const [ranks, setRanks] = useState({});
   const showTeamName = () => {
     viewTeamDetails(teamFirebaseKey).then((objectArray) => {
       setTeamDetails(objectArray);
     });
   };
+  const showRankDetails = () => {
+    getRanks().then((rankArray) => {
+      rankArray.map((rank) => setRanks(rank));
+    });
+  };
   useEffect(() => {
     showTeamName();
+    showRankDetails();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const deleteThisPlayer = () => {
@@ -42,10 +47,15 @@ export default function PlayerCard({ playerObj, onUpdate }) {
         </div>
         <div className="player-content">
           <div className="player-rank-container">
-            <div className="player-rank-image" style={{ backgroundPosition: '393px -100px' }} />
+            <div className="player-rank-image" style={{ backgroundPosition: '393px -100px' }}>
+              <Image className="player-rank-image" src={ranks.image} alt={ranks.name} />
+            </div>
+            <div>
+              <div className="rank-title"> Highest Rank</div>
+              <div className="rank-name">{ranks.name}</div>
+            </div>
           </div>
-          <div className="rank-title"> Highest Rank</div>
-          <div className="rank-name">{playerObj.rank}</div>
+
         </div>
         <div className="button-contaier">
           <a className="button" href={`/players/edit/${playerObj.firebaseKey}`}>
@@ -59,7 +69,6 @@ export default function PlayerCard({ playerObj, onUpdate }) {
               </span>
             </div>
           </a>
-          {}
         </div>
         <div className="button-contaier">
           <a className="button" href={`/teams/${playerObj.teamId}`}>
