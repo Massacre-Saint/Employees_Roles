@@ -44,10 +44,5 @@ Search.defaultProps = {
     gamertag: '',
   })),
   teamDetails: {},
-  // teamDetails: PropTypes.shape({
-  //   players: PropTypes.arrayOf(PropTypes.shape({
-  //     gamertag: '',
-  //   })),
-  // }),
   setFilteredPlayers: () => {},
 };

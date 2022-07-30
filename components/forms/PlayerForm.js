@@ -9,6 +9,7 @@ import { createPlayer, updatePlayer } from '../../api/playerData';
 import { useAuth } from '../../utils/context/authContext';
 import { getTeams } from '../../api/teamData';
 import { getRanks } from '../../api/rankData';
+import getImages from '../../api/imageData';
 
 const intitialState = {
   gamertag: '',
@@ -21,15 +22,17 @@ export default function PlayerForm({ obj }) {
   const [formInput, setFormInput] = useState(intitialState);
   const [teams, setTeams] = useState([]);
   const [ranks, setRanks] = useState([]);
+  const [images, setImages] = useState('');
   const router = useRouter();
   const { user } = useAuth();
-
   useEffect(() => {
     getTeams(user.uid).then(setTeams);
     getRanks().then(setRanks);
+    getImages().then((array) => {
+      setImages(array[Math.floor(Math.random() * 13)]);
+    });
     if (obj.firebaseKey) setFormInput(obj);
   }, [obj, user]);
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormInput((prevState) => ({
@@ -44,7 +47,7 @@ export default function PlayerForm({ obj }) {
       updatePlayer(formInput)
         .then(() => router.push('/players'));
     } else {
-      const payload = { ...formInput, uid: user.uid };
+      const payload = { ...formInput, uid: user.uid, image: images.image };
       createPlayer(payload).then(() => {
         router.push('/players');
       });
@@ -57,16 +60,14 @@ export default function PlayerForm({ obj }) {
       <FloatingLabel controlId="floatingInput1" label="Gamertag" className="mb-3">
         <Form.Control type="text" placeholder="Gamertag" name="gamertag" value={formInput.gamertag} onChange={handleChange} required />
       </FloatingLabel>
-      <FloatingLabel controlId="floatingInput2" label="Spartan Image" className="mb-3">
+      {/* <FloatingLabel controlId="floatingInput2" label="Spartan Image" className="mb-3">
         <Form.Control type="url" placeholder="Enter an image url" name="image" value={formInput.image} onChange={handleChange} required />
-      </FloatingLabel>
-      {/* <FloatingLabel controlId="floatingInput1" label="Ranking" className="mb-3">
-        <Form.Control type="text" placeholder="Spartan Ranking" name="rank" value={formInput.rank} onChange={handleChange} required />
       </FloatingLabel> */}
       <FloatingLabel controlId="floatingSelect" label="Rank">
         <Form.Select
           aria-label="Rank"
           name="rank"
+          value={formInput.rank}
           onChange={handleChange}
           className="mb-3"
           required
@@ -88,6 +89,7 @@ export default function PlayerForm({ obj }) {
         <Form.Select
           aria-label="Team"
           name="teamId"
+          value={formInput.teamId}
           onChange={handleChange}
           className="mb-3"
           required
