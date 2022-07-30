@@ -2,7 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 import {
-  Navbar, Container, Nav, Button, NavDropdown,
+  Navbar, Container, Nav, NavDropdown,
 } from 'react-bootstrap';
 import { signOut } from '../utils/auth';
 
@@ -28,7 +28,11 @@ export default function NavBar() {
                 New Team
               </NavDropdown.Item>
             </NavDropdown>
-            <Button variant="danger" onClick={signOut}>Sign Out</Button>
+            <NavDropdown title="Settings" id="basic-nav-dropdown">
+              <NavDropdown.Item onClick={signOut}>Sign Out
+              </NavDropdown.Item>
+            </NavDropdown>
+            {/* <Button variant="danger" onClick={signOut}>Sign Out</Button> */}
           </Nav>
         </Navbar.Collapse>
       </Container>

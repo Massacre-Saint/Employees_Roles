@@ -18,13 +18,24 @@ export default function Team() {
   return (
     <div>
       <div>
+        <div className="button-contaier">
+          {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+          <a className="button-middle" href="/teams/new">
+            <div className="outer-shadow" />
+            <div className="outer" />
+            <div className="inner-container">
+              <div className="container-shadow" />
+              <div className="container-background" />
+              <span className="button-content">
+                <span>Add Team</span>
+              </span>
+            </div>
+          </a>
+        </div>
         <div className="player-cards-container">
-          {/* TODO: map over books here using BookCard component */}
-          <h1>Public</h1>
           {teams.map((team) => (
             <TeamCard key={team.firebaseKey} teamObj={team} onUpdate={getAllTeams} />
           ))}
-          <h1>Private</h1>
         </div>
       </div>
     </div>

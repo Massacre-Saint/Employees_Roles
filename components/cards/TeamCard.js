@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Link from 'next/link';
-import deleteTeamPlayers from '../../api/margedData';
+import { deleteTeamPlayers } from '../../api/margedData';
 
 export default function TeamCard({ teamObj, onUpdate }) {
   const deleteThisTeam = () => {
@@ -10,7 +10,6 @@ export default function TeamCard({ teamObj, onUpdate }) {
       deleteTeamPlayers(teamObj.firebaseKey).then(() => onUpdate());
     }
   };
-
   return (
     <Card style={{ width: '18rem', margin: '10px' }}>
       <Card.Body>
@@ -33,8 +32,8 @@ TeamCard.propTypes = {
   teamObj: PropTypes.shape({
     firebaseKey: PropTypes.string,
     name: PropTypes.string,
-    image: PropTypes.string,
     public: PropTypes.bool,
+    uid: PropTypes.string,
   }).isRequired,
   onUpdate: PropTypes.func.isRequired,
 };

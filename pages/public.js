@@ -1,13 +1,12 @@
 /* eslint-disable react/self-closing-comp */
 import React, { useEffect, useState } from 'react';
-import Link from 'next/link';
 import { Table } from 'react-bootstrap';
 import { getPublicTeams } from '../api/teamData';
 import TeamTable from '../components/cards/TeamTable';
 
 export default function Public() {
   const [publicTeams, setPublicTeams] = useState([]);
-  const [teamObj, setTeamObj] = useState({});
+  const [, setTeamObj] = useState({});
   const showPublicTeams = () => {
     getPublicTeams().then((teams) => {
       setPublicTeams(teams);
@@ -20,7 +19,7 @@ export default function Public() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
-    <div key={1}>
+    <div>
       <div className="public-header">
         <div className="public-hero">
           <div className="public-nav" />
@@ -28,9 +27,6 @@ export default function Public() {
             <h1 className="public-title">PUBLIC TEAMS</h1>
             <div className="public-nav-links">
               <nav className="public-nav-links-item">
-                <Link key={teamObj.firebaseKey} href="/teams/" className="public-nav-link" passHref>
-                  Teams
-                </Link>
               </nav>
             </div>
             <div className="public-nav-search">
@@ -47,8 +43,8 @@ export default function Public() {
             <thead>
               <tr>
                 <th>Team Name</th>
-                <th>#</th>
-                <th>Username</th>
+                <th># of Spartans</th>
+                <th>Options</th>
               </tr>
             </thead>
             <tbody>
