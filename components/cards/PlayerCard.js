@@ -4,13 +4,12 @@ import Button from 'react-bootstrap/Button';
 import { useEffect, useState } from 'react';
 import { useAuth } from '../../utils/context/authContext';
 import { deleteSinglePlayer } from '../../api/playerData';
-import { viewTeamDetails } from '../../api/margedData';
-import { getRanks } from '../../api/rankData';
+import { viewRankDeatils, viewTeamDetails } from '../../api/margedData';
 
 export default function PlayerCard({ playerObj, onUpdate }) {
   const teamFirebaseKey = playerObj.teamId;
   const [teamDetails, setTeamDetails] = useState({});
-  const [ranks, setRanks] = useState({});
+  const [rankDetails, setRankDetails] = useState({});
   const { user } = useAuth();
   const showTeamName = () => {
     viewTeamDetails(teamFirebaseKey).then((objectArray) => {
@@ -18,8 +17,8 @@ export default function PlayerCard({ playerObj, onUpdate }) {
     });
   };
   const showRankDetails = () => {
-    getRanks().then((rankArray) => {
-      rankArray.map((rank) => setRanks(rank));
+    viewRankDeatils(playerObj.rank).then((objectArray) => {
+      setRankDetails(objectArray);
     });
   };
   useEffect(() => {
@@ -58,11 +57,11 @@ export default function PlayerCard({ playerObj, onUpdate }) {
         <div className="player-content">
           <div className="player-rank-container">
             <div className="player-rank-image" style={{ backgroundPosition: '393px -100px' }}>
-              <Image className="player-rank-image" src={ranks.image} alt={ranks.name} />
+              <Image className="player-rank-image" src={rankDetails.image} alt={rankDetails.name} />
             </div>
             <div>
               <div className="rank-title"> Highest Rank</div>
-              <div className="rank-name">{ranks.name}</div>
+              <div className="rank-name">{rankDetails.name}</div>
             </div>
           </div>
 

@@ -20,7 +20,14 @@ const getSingleRank = (firebaseKey) => new Promise((resolve, reject) => {
     .then((response) => resolve(response.data))
     .catch(reject);
 });
+
+const getPlayersRanks = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/players.json?orderBy="rank"&equalTo="${firebaseKey}"`)
+    .then((response) => resolve(Object.values(response.data)))
+    .catch((error) => reject(error));
+});
 export {
   getRanks,
   getSingleRank,
+  getPlayersRanks,
 };
