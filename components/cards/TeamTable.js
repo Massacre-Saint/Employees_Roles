@@ -1,15 +1,18 @@
 import PropTypes from 'prop-types';
+import Button from 'react-bootstrap/Button';
 import { useEffect, useState } from 'react';
-// import { useAuth } from '../../utils/context/authContext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGlobe, faUser } from '@fortawesome/free-solid-svg-icons';
+import { useAuth } from '../../utils/context/authContext';
 import { viewTeamDetails } from '../../api/margedData';
 
 function TeamTable({ teamObj }) {
-  // const [publicPlayers, setPublicPlayers] = useState({});
   const [playerCount, setPlayerCount] = useState(0);
-  // const { user } = useAuth();
+  const [teamDetail, setTeamDetail] = useState({});
+  const { user } = useAuth();
   const showPublicPlayers = () => {
     viewTeamDetails(teamObj.firebaseKey).then((arrayObjects) => {
-      // setPublicPlayers(arrayObjects);
+      setTeamDetail(arrayObjects);
       setPlayerCount(arrayObjects.players.length);
     });
   };
@@ -21,7 +24,22 @@ function TeamTable({ teamObj }) {
     <tr>
       <td>{teamObj.name}</td>
       <td>{playerCount}</td>
-      <td>{teamObj.uid}
+      <td>
+        {
+          teamObj.uid !== user.uid
+            ? (
+              <span>
+                <FontAwesomeIcon icon={faGlobe} />
+                <Button variant="light" href={`/teams/${teamDetail.firebaseKey}`}>Details</Button>
+              </span>
+            )
+            : (
+              <span>
+                <FontAwesomeIcon icon={faUser} />
+                <Button variant="light" href={`/teams/${teamDetail.firebaseKey}`}>Details</Button>
+              </span>
+            )
+        }
         {/* {
           teamObj.uid === user.uid
             ? `${user.displayName}`

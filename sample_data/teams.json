@@ -3,18 +3,18 @@
     "uid":"mhxFgASX9UfJNvZoprCnujsjrFx2",
     "firebaseKey":"DWUEFhUKAXIU6hf",
     "name": "Blue Team",
-    "public":"false"
+    "public": false
   },
   "qL8zod9IgXGD9JT": {
     "uid":"mhxFgASX9UfJNvZoprCnujsjrFx2",
     "firebaseKey":"qL8zod9IgXGD9JT",
     "name": "Red Team",
-    "public":"false"
+    "public": false
   },
   "ZTsj6sqzIDN1pfI": {
     "uid":"mhxFgASX9UfJNvZoprCnujsjrFx2",
     "firebaseKey":"ZTsj6sqzIDN1pfI",
     "name": "Green Team",
-    "public":"false"
+    "public": false
   }
 }

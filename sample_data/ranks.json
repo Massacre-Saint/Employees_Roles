@@ -3,5 +3,60 @@
   "firebaseKey": "cksxEpdooxBF9gG",
   "name":"Recruit",
   "image":"https://halo.wiki.gallery/images/thumb/0/01/HR_Rank_Recruit_Icon.png/75px-HR_Rank_Recruit_Icon.png"
+  },
+  "g1fP7uaaEInod4z" :{
+    "firebaseKey": "g1fP7uaaEInod4z",
+    "name":"Private",
+    "image":"https://halo.wiki.gallery/images/thumb/2/2b/HR_Rank_Private_Icon.png/75px-HR_Rank_Private_Icon.png"
+  },
+  "nOIlMg4uTzMwsnu" :{
+    "firebaseKey": "nOIlMg4uTzMwsnu",
+    "name":"Major",
+    "image":"https://halo.wiki.gallery/images/thumb/5/5e/HR_Rank_Major_Icon.png/75px-HR_Rank_Major_Icon.png"
+  },
+  "aBBBARDt9J8GjGF" :{
+    "firebaseKey": "aBBBARDt9J8GjGF",
+    "name":"Warrant Officer",
+    "image":"https://halo.wiki.gallery/images/thumb/6/65/HR_Rank_Warrant_Officer_Icon.png/75px-HR_Rank_Warrant_Officer_Icon.png"
+  },
+  "zxZq2pdmvTssVj2" :{
+      "firebaseKey": "zxZq2pdmvTssVj2",
+      "name":"Legend",
+      "image":"https://halo.wiki.gallery/images/thumb/3/37/HR_Rank_Legend_Icon.png/75px-HR_Rank_Legend_Icon.png"
+  },
+  "dBO054GRYC0O2Tr" :{
+    "firebaseKey": "dBO054GRYC0O2Tr",
+    "name":"Captain",
+    "image":"https://halo.wiki.gallery/images/thumb/d/da/HR_Rank_Captain_Icon.png/75px-HR_Rank_Captain_Icon.png"
+  },
+  "abpsYccMOAtL1QO" :{
+    "firebaseKey": "abpsYccMOAtL1QO",
+    "name":"Noble",
+    "image":"https://halo.wiki.gallery/images/thumb/7/75/HR_Rank_Noble_Icon.png/75px-HR_Rank_Noble_Icon.png"
+  },
+  "Hx1Ifg4CGw9Udif" :{
+    "firebaseKey": "Hx1Ifg4CGw9Udif",
+    "name":"General",
+    "image":"https://halo.wiki.gallery/images/thumb/2/2b/HR_Rank_General_Icon.png/75px-HR_Rank_General_Icon.png"
+  },
+  "W8rv1XLlH95LRwh" :{
+   "firebaseKey": "W8rv1XLlH95LRwh",
+    "name":"Lt. Colonel",
+    "image":"https://halo.wiki.gallery/images/thumb/4/4a/HR_Rank_Lieutenant_Colonel_Icon.png/75px-HR_Rank_Lieutenant_Colonel_Icon.png"
+  },
+  "QOSmUFtQSbljL8o" :{
+  "firebaseKey": "QOSmUFtQSbljL8o",
+  "name":"Nova",
+  "image":"https://halo.wiki.gallery/images/thumb/5/5e/HR_Rank_Nova_Icon.png/75px-HR_Rank_Nova_Icon.png"
+  },
+  "Ro91tij5VEe0Whk" :{
+    "firebaseKey": "Ro91tij5VEe0Whk",
+    "name":"Inheritor",
+    "image":"https://halo.wiki.gallery/images/thumb/a/a2/HR_Rank_Inheritor_Icon.png/75px-HR_Rank_Inheritor_Icon.png"
+  },
+  "LzORLXrjtKyAJUx" :{
+    "firebaseKey": "LzORLXrjtKyAJUx",
+    "name":"Reclaimer",
+    "image":"https://halo.wiki.gallery/images/thumb/5/58/HR_Rank_Reclaimer_Icon.png/75px-HR_Rank_Reclaimer_Icon.png"
   }
 }
