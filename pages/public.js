@@ -17,6 +17,7 @@ export default function Public() {
   };
   useEffect(() => {
     showPublicTeams();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <div key={1}>
