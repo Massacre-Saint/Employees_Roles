@@ -35,7 +35,7 @@ export default function Team() {
               </p>
               <div className="button-contaier">
                 {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-                <a className="button-middle" href="/players/new">
+                <a className="button-middle" href="/teams/new">
                   <div className="outer-shadow" />
                   <div className="outer" />
                   <div className="inner-container">

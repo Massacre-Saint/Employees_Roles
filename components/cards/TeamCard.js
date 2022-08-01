@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image';
-import img from '../../public/team.png';
 import { useAuth } from '../../utils/context/authContext';
 import { viewTeamDetails, deleteTeamPlayers } from '../../api/margedData';
 
