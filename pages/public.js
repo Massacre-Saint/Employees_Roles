@@ -11,7 +11,6 @@ export default function Public() {
     getPublicTeams().then((teams) => {
       setPublicTeams(teams);
       publicTeams.map((Obj) => setTeamObj(Obj));
-      // const teamFirebaseKey = teams.map((team) => team.firebaseKey);
     });
   };
   useEffect(() => {

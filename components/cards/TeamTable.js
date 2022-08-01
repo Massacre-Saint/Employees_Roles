@@ -24,27 +24,22 @@ function TeamTable({ teamObj }) {
     <tr>
       <td>{teamObj.name}</td>
       <td>{playerCount}</td>
-      <td>
+      <td className="table-row">
         {
           teamObj.uid !== user.uid
             ? (
               <span>
-                <FontAwesomeIcon icon={faGlobe} />
+                <FontAwesomeIcon className="icon" icon={faGlobe} />
                 <Button variant="light" href={`/teams/${teamDetail.firebaseKey}`}>Details</Button>
               </span>
             )
             : (
               <span>
-                <FontAwesomeIcon icon={faUser} />
+                <FontAwesomeIcon className="icon" icon={faUser} />
                 <Button variant="light" href={`/teams/${teamDetail.firebaseKey}`}>Details</Button>
               </span>
             )
         }
-        {/* {
-          teamObj.uid === user.uid
-            ? `${user.displayName}`
-            : 'different'
-        } */}
       </td>
     </tr>
   );
