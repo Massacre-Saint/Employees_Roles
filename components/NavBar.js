@@ -10,12 +10,17 @@ export default function NavBar() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Link passHref href="/public">
+        <Link passHref href="/">
           <Navbar.Brand>HALO TEAMS</Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
+            <Link passHref href="/public">
+              <Nav.Link>
+                Public
+              </Nav.Link>
+            </Link>
             <Link passHref href="/players">
               <Nav.Link>Your Spartans</Nav.Link>
             </Link>
@@ -32,7 +37,6 @@ export default function NavBar() {
               <NavDropdown.Item onClick={signOut}>Sign Out
               </NavDropdown.Item>
             </NavDropdown>
-            {/* <Button variant="danger" onClick={signOut}>Sign Out</Button> */}
           </Nav>
         </Navbar.Collapse>
       </Container>

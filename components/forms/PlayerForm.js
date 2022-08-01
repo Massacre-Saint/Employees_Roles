@@ -22,6 +22,7 @@ export default function PlayerForm({ obj }) {
   const [formInput, setFormInput] = useState(intitialState);
   const [teams, setTeams] = useState([]);
   const [ranks, setRanks] = useState([]);
+
   const [images, setImages] = useState('');
   const router = useRouter();
   const { user } = useAuth();
@@ -60,9 +61,6 @@ export default function PlayerForm({ obj }) {
       <FloatingLabel controlId="floatingInput1" label="Gamertag" className="mb-3">
         <Form.Control type="text" placeholder="Gamertag" name="gamertag" value={formInput.gamertag} onChange={handleChange} required />
       </FloatingLabel>
-      {/* <FloatingLabel controlId="floatingInput2" label="Spartan Image" className="mb-3">
-        <Form.Control type="url" placeholder="Enter an image url" name="image" value={formInput.image} onChange={handleChange} required />
-      </FloatingLabel> */}
       <FloatingLabel controlId="floatingSelect" label="Rank">
         <Form.Select
           aria-label="Rank"

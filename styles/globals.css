@@ -26,7 +26,14 @@ p {
   color: #b4b4b4;
 }
 .main-container {
-  padding : 0 60px 0 60px;
+  background-position: bottom;
+  background-image: url(https://www.halowaypoint.com/static/gak/fading-in-dot-gak.png);
+  z-index: -1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: repeat-x;
 }
 .text-lg {
   margin-bottom: 8px;
@@ -109,10 +116,15 @@ h3 {
   max-width: 200px;
   margin:0 auto;
   height: 200px;
-  -webkit-mask-image: -webkit-linear-gradient(bottom,transparent,#000 20%);
+  mask-image: -webkit-linear-gradient(bottom,transparent,#000 50%);
+}
+.team-image-ratio {
+  overflow: visible;
+  margin:0 auto;
+  mask-image: -webkit-linear-gradient(bottom,transparent,#000 50%);
 }
 .team-image {
- aspect-ratio: auto;
+ max-width: 100%;
 }
 .player-image {
   position: relative;
@@ -130,8 +142,8 @@ h3 {
   align-items: center;
 }
 .player-rank-image {
-  width: 78px;
-  height: 99px;
+  width: auto;
+  height: auto;
 }
 .rank-title {
   font-weight: 500px;
@@ -326,4 +338,51 @@ h3 {
   border-radius: 5px 5px 0 0;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.table-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.icon {
+  padding-right: 30px;
+}
+.landing-content-container {
+  background-image: url(https://wpassets.halowaypoint.com/wp-content/2022/04/vNext-MBI-MCCMultiplayer-Desktop-02.jpg);
+  background-size: cover;
+  height:100vh;
+}
+.landing-content-module {
+padding-top:30vh;
+width: 30vw;
+}
+.landing-welcome {
+  font-family: Arial,sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: #b4b4b4;
+  letter-spacing: .3em;
+}
+.landing-title {
+  margin-top: 20px;
+  font-family: Arial,sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 38px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: #fff;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+}
+.landing-body {
+  margin-top: 40px;
+}
+.landing-p {
+  font-family: Arial,sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #b4b4b4;
 }
