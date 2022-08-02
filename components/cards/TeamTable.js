@@ -3,8 +3,10 @@ import Button from 'react-bootstrap/Button';
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobe, faUser } from '@fortawesome/free-solid-svg-icons';
+// import Link from 'next/link';
 import { useAuth } from '../../utils/context/authContext';
 import { viewTeamDetails } from '../../api/margedData';
+import TradeModal from '../forms/TradeModal';
 
 function TeamTable({ teamObj }) {
   const [playerCount, setPlayerCount] = useState(0);
@@ -28,13 +30,19 @@ function TeamTable({ teamObj }) {
         {
           teamObj.uid !== user.uid
             ? (
-              <span>
+              <span className="icons">
                 <FontAwesomeIcon className="icon" icon={faGlobe} />
                 <Button variant="light" href={`/teams/${teamDetail.firebaseKey}`}>Details</Button>
+                <TradeModal
+                  passHref
+                  href={`/teams/trade/${teamDetail.firebaseKey}`}
+                  alt="tade team"
+                  teamObj={teamDetail}
+                />
               </span>
             )
             : (
-              <span>
+              <span className="icons">
                 <FontAwesomeIcon className="icon" icon={faUser} />
                 <Button variant="light" href={`/teams/${teamDetail.firebaseKey}`}>Details</Button>
               </span>

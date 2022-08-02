@@ -7,9 +7,7 @@ export default function Team() {
   const [teams, setTeams] = useState([]);
   const { user } = useAuth();
   const getAllTeams = () => {
-    getTeams(user.uid).then((teamArray) => {
-      setTeams(teamArray);
-    });
+    getTeams(user.uid).then(setTeams);
   };
   useEffect(() => {
     getAllTeams();
@@ -35,7 +33,7 @@ export default function Team() {
               </p>
               <div className="button-contaier">
                 {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-                <a className="button-middle" href="/players/new">
+                <a className="button-middle" href="/teams/new">
                   <div className="outer-shadow" />
                   <div className="outer" />
                   <div className="inner-container">
