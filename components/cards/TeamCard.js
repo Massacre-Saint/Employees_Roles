@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
-import Image from 'react-bootstrap/Image';
-import img from '../../public/team.png';
+import Image from 'next/image';
+import team from '../../public/team.png';
 import { useAuth } from '../../utils/context/authContext';
 import { viewTeamDetails, deleteTeamPlayers } from '../../api/margedData';
 
@@ -35,7 +35,7 @@ export default function TeamCard({ teamObj, onUpdate }) {
         <div className="image-container">
           <div className="team-image-ratio">
             <div className="team-image">
-              <Image className="team-image" src="https://o.remove.bg/downloads/9ba1337b-286c-475a-ad9b-3754947cabda/kindpng_3866561-removebg-preview.png" alt={teamObj.name} />
+              <Image className="team-image" src={team} alt={teamObj.name} />
             </div>
           </div>
         </div>
