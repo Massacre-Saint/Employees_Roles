@@ -1,14 +1,12 @@
-import { useRouter } from 'next/router';
 import Form from 'react-bootstrap/Form';
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import { useAuth } from '../../utils/context/authContext';
-import { getTeams, updateTeam } from '../../api/teamData';
+import { getTeams } from '../../api/teamData';
 
 export default function TradeForm({ teamObj }) {
   const [userTeams, setUserTeams] = useState([]);
   const [formInput, setFormInput] = useState({});
-  const router = useRouter();
   const { user } = useAuth();
   useEffect(() => {
     getTeams(user.uid).then(setUserTeams);
