@@ -28,13 +28,13 @@ function TeamTable({ teamObj }) {
         {
           teamObj.uid !== user.uid
             ? (
-              <span>
+              <span className="icons">
                 <FontAwesomeIcon className="icon" icon={faGlobe} />
                 <Button variant="light" href={`/teams/${teamDetail.firebaseKey}`}>Details</Button>
               </span>
             )
             : (
-              <span>
+              <span className="icons">
                 <FontAwesomeIcon className="icon" icon={faUser} />
                 <Button variant="light" href={`/teams/${teamDetail.firebaseKey}`}>Details</Button>
               </span>

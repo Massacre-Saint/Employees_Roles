@@ -37,7 +37,7 @@ export default function TeamForm({ obj }) {
     } else {
       const payload = { ...formInput, uid: user.uid };
       createTeam(payload).then(() => {
-        router.push('/teams');
+        router.push('/teams/');
       });
     }
   };

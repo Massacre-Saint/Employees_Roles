@@ -1,12 +1,21 @@
 import { deleteSinglePlayer, getSinglePlayer } from './playerData';
 import { getSingleRank, getPlayersRanks } from './rankData';
 import { getTeamPlayers, deleteSingleTeam, getSingleTeam } from './teamData';
+import { deleteSingleTrade} from './tradeData';
 
 const deleteTeamPlayers = (teamId) => new Promise((resolve, reject) => {
   getTeamPlayers(teamId).then((playerArray) => {
     const deletePlayersPromises = playerArray.map((player) => deleteSinglePlayer(player.firebaseKey));
     Promise.all(deletePlayersPromises).then(() => {
       deleteSingleTeam(teamId).then(resolve);
+    });
+  }).catch((error) => reject(error));
+});
+const deleteTradedTeamPlayers = (teamId) => new Promise((resolve, reject) => {
+  getTeamPlayers(teamId).then((playerArray) => {
+    const deletePlayersPromises = playerArray.map((player) => deleteSinglePlayer(player.firebaseKey));
+    Promise.all(deletePlayersPromises).then(() => {
+      deleteSingleTrade(teamId).then(resolve);
     });
   }).catch((error) => reject(error));
 });
@@ -22,7 +31,7 @@ const viewRankDeatils = (rankFirebaseKey) => new Promise((resolve, reject) => {
     .then(([rankObject, rankPlayersArray]) => {
       resolve({ ...rankObject, players: rankPlayersArray });
     }).catch((error) => reject(error));
-})
+});
 const getPlayerTeam = (firebaseKey) => new Promise((resolve, reject) => {
   getSinglePlayer(firebaseKey).then((playerObject) => {
     getSingleTeam(playerObject.firebaseKey).then((teamObject) => {
@@ -32,6 +41,7 @@ const getPlayerTeam = (firebaseKey) => new Promise((resolve, reject) => {
 });
 export {
   deleteTeamPlayers,
+  deleteTradedTeamPlayers,
   viewTeamDetails,
   getPlayerTeam,
   viewRankDeatils,
