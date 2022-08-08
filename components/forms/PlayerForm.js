@@ -5,7 +5,6 @@ import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
 import { createPlayer, updatePlayer } from '../../api/playerData';
-// import getRanks from '../../api/rankData';
 import { useAuth } from '../../utils/context/authContext';
 import { getTeams } from '../../api/teamData';
 import { getRanks } from '../../api/rankData';
