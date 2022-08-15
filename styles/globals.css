@@ -82,7 +82,7 @@ p {
   flex-direction: column;
   row-gap: 20px;
   width:356px;
-  height:685px;
+  padding-bottom: 32px;
 }
 h3 {
   display: block;

@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import { useAuth } from '../../utils/context/authContext';
 import { viewTeamDetails } from '../../api/margedData';
 import PlayerCard from '../../components/cards/PlayerCard';
 import Search from '../../components/Search';
@@ -8,6 +9,7 @@ export default function ViewTeam() {
   const [teamDetails, setTeamDetails] = useState({});
   const [filteredPlayers, setFilteredPlayers] = useState([]);
   const [players, setPlayers] = useState([]);
+  const { user } = useAuth();
   const router = useRouter();
   const { firebaseKey } = router.query;
   const getAllPlayers = () => {
@@ -26,7 +28,15 @@ export default function ViewTeam() {
       <div className="header-container">
         <div className="hero-header">{teamDetails.name}</div>
         <div className="search-bar">
-          <Search players={players} teamDetails={teamDetails} setFilteredPlayers={setFilteredPlayers} />
+          {
+            teamDetails.uid !== user.uid
+              ? (
+                ''
+              )
+              : (
+                <Search players={players} teamDetails={teamDetails} setFilteredPlayers={setFilteredPlayers} />
+              )
+          }
         </div>
       </div>
       <h1 className="text-lg">ASSIGNED SPARTANS</h1>
